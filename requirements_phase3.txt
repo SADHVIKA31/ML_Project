@@ -1,0 +1,6 @@
+# Phase 3 – Data Preprocessing
+# (adds to Phase 1 + Phase 2 requirements)
+opencv-python>=4.8.0
+numpy>=1.26.0
+matplotlib>=3.8.0
+scikit-learn>=1.3.0

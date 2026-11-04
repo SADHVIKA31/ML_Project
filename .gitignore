@@ -33,9 +33,16 @@ data/splits/**/*.tiff
 data/splits/**/*.tif
 !data/splits/.gitkeep
 
-# Reports (keep .gitkeep, ignore generated output)
-reports/*
+# Preprocessed – ignore large binary arrays, keep label map and stats
+data/preprocessed/*.npy
+data/preprocessed/**/*.npy
+!data/preprocessed/.gitkeep
+
+# Reports – keep .gitkeep and before/after PNGs (small); ignore generated JSONs/MDs
+reports/*.json
+reports/*.md
 !reports/.gitkeep
+!reports/before_after/.gitkeep
 
 # Kaggle credentials
 .kaggle/
