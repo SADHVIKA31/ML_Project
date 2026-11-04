@@ -24,6 +24,15 @@ data/interim/*
 !data/processed/.gitkeep
 !data/interim/.gitkeep
 
+# Splits – keep manifests (CSV/JSON), ignore copied image trees
+data/splits/**/*.jpg
+data/splits/**/*.jpeg
+data/splits/**/*.png
+data/splits/**/*.bmp
+data/splits/**/*.tiff
+data/splits/**/*.tif
+!data/splits/.gitkeep
+
 # Reports (keep .gitkeep, ignore generated output)
 reports/*
 !reports/.gitkeep
