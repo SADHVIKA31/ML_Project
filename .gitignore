@@ -1,0 +1,40 @@
+# Byte-compiled / optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data directories – track structure, not files
+data/raw/*
+data/processed/*
+data/interim/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/interim/.gitkeep
+
+# Reports (keep .gitkeep, ignore generated output)
+reports/*
+!reports/.gitkeep
+
+# Kaggle credentials
+.kaggle/
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
