@@ -1,8 +1,9 @@
 """
 Unit Tests for Machine Learning Models - Person 2 (Archana Ulloju).
 
-Tests Logistic Regression and Random Forest pipelines, ensuring proper fit/transform,
-evaluation metric calculation, and joblib serialization without data leakage.
+Tests Logistic Regression, Random Forest, and Support Vector Machine pipelines,
+ensuring proper fit/transform, evaluation metric calculation, and joblib serialization
+without data leakage.
 """
 
 import os
@@ -17,6 +18,7 @@ sys.path.insert(0, str(project_root))
 
 from archana_person2.src.logistic_regression import AquaticLogisticRegression
 from archana_person2.src.random_forest import AquaticRandomForest
+from archana_person2.src.svm_classifier import AquaticSVMClassifier
 
 
 @pytest.fixture
@@ -145,3 +147,76 @@ class TestRandomForest:
             preds_loaded = loaded.predict(X_test)
             assert np.array_equal(preds_orig, preds_loaded)
             assert loaded.n_estimators == 10
+
+
+class TestSVMClassifier:
+    def test_pipeline_build_and_fit(self, synthetic_data):
+        X_train, y_train, _, _, X_test, y_test = synthetic_data
+        svm = AquaticSVMClassifier(kernel="rbf", C=1.0, random_state=42)
+        svm.fit(X_train, y_train)
+
+        preds = svm.predict(X_test)
+        assert len(preds) == len(X_test)
+        assert set(preds).issubset({0, 1, 2})
+
+        probs = svm.predict_proba(X_test)
+        assert probs.shape == (len(X_test), 3)
+        assert np.allclose(np.sum(probs, axis=1), 1.0, atol=1e-5)
+
+    def test_kernel_comparison(self, synthetic_data):
+        X_train, y_train, X_val, y_val, _, _ = synthetic_data
+        svm = AquaticSVMClassifier(random_state=42)
+        results = svm.compare_kernels(
+            X_train, y_train, X_val, y_val,
+            kernels=["linear", "rbf", "poly"],
+            c_values=[0.1, 1.0],
+        )
+        assert "best_kernel_setup" in results
+        assert "all_kernel_results" in results
+        assert len(results["all_kernel_results"]) == 6
+        assert len(svm.kernel_comparison_results_) == 6
+
+    def test_hyperparameter_tuning(self, synthetic_data):
+        X_train, y_train, X_val, y_val, _, _ = synthetic_data
+        svm = AquaticSVMClassifier(random_state=42)
+        grid = {
+            "kernel": ["linear", "rbf"],
+            "C": [0.1, 1.0],
+            "gamma": ["scale"],
+            "degree": [3],
+        }
+        best_params = svm.tune_hyperparameters(X_train, y_train, X_val, y_val, param_grid=grid)
+        assert "kernel" in best_params
+        assert "C" in best_params
+        assert len(svm.experiment_results_) == 4
+
+    def test_evaluation_metrics(self, synthetic_data):
+        X_train, y_train, _, _, X_test, y_test = synthetic_data
+        svm = AquaticSVMClassifier(kernel="linear", C=1.0, random_state=42)
+        svm.fit(X_train, y_train)
+
+        class_names = ["Species_01", "Species_02", "Species_03"]
+        metrics = svm.evaluate(X_test, y_test, class_names=class_names)
+
+        assert "accuracy" in metrics
+        assert "macro_f1" in metrics
+        assert "weighted_f1" in metrics
+        assert "confusion_matrix" in metrics
+        assert 0.0 <= metrics["accuracy"] <= 1.0
+        assert 0.0 <= metrics["macro_f1"] <= 1.0
+        assert len(metrics["confusion_matrix"]) == 3
+
+    def test_save_load(self, synthetic_data):
+        X_train, y_train, _, _, X_test, _ = synthetic_data
+        svm = AquaticSVMClassifier(kernel="rbf", C=2.5, random_state=42)
+        svm.fit(X_train, y_train)
+        preds_orig = svm.predict(X_test)
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            save_path = os.path.join(tmp_dir, "test_svm.joblib")
+            svm.save(save_path)
+            loaded = AquaticSVMClassifier.load(save_path)
+            preds_loaded = loaded.predict(X_test)
+            assert np.array_equal(preds_orig, preds_loaded)
+            assert loaded.C == 2.5
+            assert loaded.kernel == "rbf"
