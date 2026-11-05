@@ -41,8 +41,8 @@ FutureWarning). No regressions were introduced.
 | Test File | Tests | Passed | Skipped | Failed |
 |-----------|-------|--------|---------|--------|
 | `test_comparison.py` | 4 | 4 | 0 | 0 |
-| `test_evaluation.py` | 9 | 9 | 0 | 0 |
-| `test_feature_extraction.py` | 7 | 7 | 0 | 0 |
+| `test_evaluation.py` | 15 | 15 | 0 | 0 |
+| `test_feature_extraction.py` | 8 | 8 | 0 | 0 |
 | `test_integration.py` | 33 | 33 | 0 | 0 |
 | `test_models.py` | 14 | 14 | 0 | 0 |
 | `test_prediction.py` | 20 | 20 | 0 | 0 |
