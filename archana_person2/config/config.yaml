@@ -1,0 +1,74 @@
+# Configuration for Person 2 (Archana Ulloju)
+# Project: Machine Learning for Robust Aquatic Biodiversity Monitoring
+
+project:
+  name: "aquatic_biodiversity_monitoring_person2"
+  contributor: "Archana Ulloju"
+  role: "Person 2 - Classical ML and Feature Extraction"
+  random_seed: 42
+
+dataset:
+  # Official paths from Person 1 (Sadhvika)
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  preprocessed_dir: "data/preprocessed"
+  # Synthetic fixture path (used when raw/processed datasets are not yet populated)
+  synthetic_dir: "archana_person2/artifacts/fixtures/synthetic_dataset"
+  train_manifest: "data/splits/train.csv"
+  val_manifest: "data/splits/val.csv"
+  test_manifest: "data/splits/test.csv"
+  label_map: "data/preprocessed/label_map.json"
+  target_size: [224, 224]
+  valid_extensions: [".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff"]
+
+feature_extraction:
+  color_histogram:
+    channels: "both" # "rgb", "hsv", or "both"
+    bins_rgb: [8, 8, 8]
+    bins_hsv: [8, 8, 8]
+    normalize: true
+  hog:
+    orientations: 9
+    pixels_per_cell: [16, 16]
+    cells_per_block: [2, 2]
+    block_norm: "L2-Hys"
+  output_dir: "archana_person2/artifacts/features"
+  cache_features: true
+
+models:
+  output_dir: "archana_person2/artifacts/models"
+  metrics_dir: "archana_person2/artifacts/metrics"
+  plots_dir: "archana_person2/artifacts/plots"
+  
+  logistic_regression:
+    max_iter: 1000
+    tol: 0.0001
+    solver: "lbfgs"
+    multi_class: "multinomial"
+    C: 1.0
+    random_state: 42
+
+  random_forest:
+    n_estimators: 100
+    max_depth: 20
+    min_samples_split: 5
+    min_samples_leaf: 2
+    random_state: 42
+    n_jobs: 1
+
+  svm:
+    kernel: "rbf"
+    C: 1.0
+    gamma: "scale"
+    probability: true
+    random_state: 42
+
+evaluation:
+  primary_metric: "macro_f1"
+  metrics:
+    - "accuracy"
+    - "macro_precision"
+    - "macro_recall"
+    - "macro_f1"
+    - "weighted_f1"

@@ -54,3 +54,11 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Person 2 - Archana Ulloju Ignore Rules
+archana_person2/artifacts/fixtures/synthetic_dataset/images/
+archana_person2/artifacts/features/*.npz
+archana_person2/artifacts/models/*.joblib
+.mplcache/
+powershell.exe
+powershell.cmd

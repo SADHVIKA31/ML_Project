@@ -1,0 +1,76 @@
+{
+  "dataset_type": "synthetic_fixture",
+  "official_splits_present": false,
+  "num_classes": 5,
+  "classes": [
+    "Species_01",
+    "Species_02",
+    "Species_03",
+    "Species_04",
+    "Species_05"
+  ],
+  "total_samples": 150,
+  "split_counts": {
+    "train": 50,
+    "val": 50,
+    "test": 50
+  },
+  "leakage_verification": {
+    "train_videos_count": 5,
+    "val_videos_count": 5,
+    "test_videos_count": 5,
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "is_leakage_safe": true
+  },
+  "class_distribution": {
+    "Species_01": {
+      "train": 10,
+      "val": 10,
+      "test": 10,
+      "total": 30
+    },
+    "Species_02": {
+      "train": 10,
+      "val": 10,
+      "test": 10,
+      "total": 30
+    },
+    "Species_03": {
+      "train": 10,
+      "val": 10,
+      "test": 10,
+      "total": 30
+    },
+    "Species_04": {
+      "train": 10,
+      "val": 10,
+      "test": 10,
+      "total": 30
+    },
+    "Species_05": {
+      "train": 10,
+      "val": 10,
+      "test": 10,
+      "total": 30
+    }
+  },
+  "sample_image_dimensions": [
+    [
+      224,
+      224,
+      3
+    ],
+    [
+      224,
+      224,
+      3
+    ],
+    [
+      224,
+      224,
+      3
+    ]
+  ]
+}
