@@ -1,0 +1,8 @@
+{
+  "split": "val",
+  "representation": "hog",
+  "num_samples": 50,
+  "feature_dim": 6084,
+  "label_count": 5,
+  "cache_file": "features_val_hog.npz"
+}

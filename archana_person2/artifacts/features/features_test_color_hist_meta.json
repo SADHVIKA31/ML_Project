@@ -1,0 +1,8 @@
+{
+  "split": "test",
+  "representation": "color_hist",
+  "num_samples": 50,
+  "feature_dim": 1024,
+  "label_count": 5,
+  "cache_file": "features_test_color_hist.npz"
+}
