@@ -1,0 +1,15 @@
+{
+  "num_classes": 5,
+  "classes": [
+    "Species_01",
+    "Species_02",
+    "Species_03",
+    "Species_04",
+    "Species_05"
+  ],
+  "total_samples": 150,
+  "train_samples": 50,
+  "val_samples": 50,
+  "test_samples": 50,
+  "target_dir": "C:\\Users\\ulloj\\ML_Project\\archana_person2\\artifacts\\fixtures\\synthetic_dataset"
+}
