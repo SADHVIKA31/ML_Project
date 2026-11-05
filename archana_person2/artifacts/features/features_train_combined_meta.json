@@ -1,0 +1,8 @@
+{
+  "split": "train",
+  "representation": "combined",
+  "num_samples": 50,
+  "feature_dim": 7108,
+  "label_count": 5,
+  "cache_file": "features_train_combined.npz"
+}
