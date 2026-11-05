@@ -62,3 +62,16 @@ archana_person2/artifacts/models/*.joblib
 .mplcache/
 powershell.exe
 powershell.cmd
+
+# Person 2 — Phase 10 cleanup additions
+# Generated artifact outputs (re-creatable from scripts; not source code)
+archana_person2/artifacts/plots/*.png
+archana_person2/artifacts/metrics/*.json
+archana_person2/artifacts/metrics/*.csv
+archana_person2/artifacts/features/*_meta.json
+# Keep synthetic fixture manifests (small, text, used by tests)
+!archana_person2/artifacts/fixtures/synthetic_dataset/label_map.json
+!archana_person2/artifacts/fixtures/synthetic_dataset/split_summary.json
+!archana_person2/artifacts/fixtures/synthetic_dataset/train.csv
+!archana_person2/artifacts/fixtures/synthetic_dataset/val.csv
+!archana_person2/artifacts/fixtures/synthetic_dataset/test.csv

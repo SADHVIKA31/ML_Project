@@ -1,4 +1,0 @@
-model_name,test_samples,accuracy,macro_precision,weighted_precision,macro_recall,weighted_recall,macro_f1,weighted_f1,log_loss,roc_auc_macro_ovr
-Logistic Regression,50,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.3348958197718832,1.0
-Random Forest,50,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.09203916561008946,1.0
-Support Vector Machine (SVM),50,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.16725474742642363,1.0

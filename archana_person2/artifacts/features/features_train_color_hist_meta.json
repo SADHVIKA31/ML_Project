@@ -1,8 +1,0 @@
-{
-  "split": "train",
-  "representation": "color_hist",
-  "num_samples": 50,
-  "feature_dim": 1024,
-  "label_count": 5,
-  "cache_file": "features_train_color_hist.npz"
-}
