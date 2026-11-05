@@ -18,6 +18,7 @@ import joblib
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
+from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import (
     accuracy_score,
     precision_score,
@@ -76,20 +77,25 @@ class AquaticSVMClassifier:
         d = degree if degree is not None else self.degree
         c0 = coef0 if coef0 is not None else self.coef0
 
-        svc = SVC(
+        base_svc = SVC(
             kernel=k,
             C=c_val,
             gamma=g,
             degree=d,
             coef0=c0,
-            probability=self.probability,
             random_state=self.random_state,
             class_weight=self.class_weight,
         )
+        # Use CalibratedClassifierCV for probability estimates
+        # (sklearn 1.9+ recommendation over SVC(probability=True)).
+        if self.probability:
+            classifier = CalibratedClassifierCV(base_svc, ensemble=False)
+        else:
+            classifier = base_svc
 
         pipe = Pipeline([
             ("scaler", StandardScaler()),
-            ("classifier", svc),
+            ("classifier", classifier),
         ])
         return pipe
 
