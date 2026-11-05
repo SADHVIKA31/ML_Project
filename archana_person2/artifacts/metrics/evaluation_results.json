@@ -1,0 +1,344 @@
+{
+  "Logistic Regression": {
+    "model_name": "Logistic Regression",
+    "num_samples": 50,
+    "metrics": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "weighted_precision": 1.0,
+      "macro_recall": 1.0,
+      "weighted_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0
+    },
+    "probability_metrics": {
+      "available": true,
+      "log_loss": 0.3348958197718832,
+      "roc_auc_macro_ovr": 1.0
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "Species_01": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_02": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_03": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_04": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_05": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      }
+    },
+    "class_names": [
+      "Species_01",
+      "Species_02",
+      "Species_03",
+      "Species_04",
+      "Species_05"
+    ],
+    "labels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "Random Forest": {
+    "model_name": "Random Forest",
+    "num_samples": 50,
+    "metrics": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "weighted_precision": 1.0,
+      "macro_recall": 1.0,
+      "weighted_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0
+    },
+    "probability_metrics": {
+      "available": true,
+      "log_loss": 0.09203916561008946,
+      "roc_auc_macro_ovr": 1.0
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "Species_01": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_02": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_03": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_04": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_05": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      }
+    },
+    "class_names": [
+      "Species_01",
+      "Species_02",
+      "Species_03",
+      "Species_04",
+      "Species_05"
+    ],
+    "labels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "Support Vector Machine (SVM)": {
+    "model_name": "Support Vector Machine (SVM)",
+    "num_samples": 50,
+    "metrics": {
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "weighted_precision": 1.0,
+      "macro_recall": 1.0,
+      "weighted_recall": 1.0,
+      "macro_f1": 1.0,
+      "weighted_f1": 1.0
+    },
+    "probability_metrics": {
+      "available": true,
+      "log_loss": 0.16725474742642363,
+      "roc_auc_macro_ovr": 1.0
+    },
+    "confusion_matrix": [
+      [
+        10,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        10,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        10,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        10
+      ]
+    ],
+    "classification_report": {
+      "Species_01": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_02": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_03": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_04": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "Species_05": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 10.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 50.0
+      }
+    },
+    "class_names": [
+      "Species_01",
+      "Species_02",
+      "Species_03",
+      "Species_04",
+      "Species_05"
+    ],
+    "labels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  }
+}
